@@ -15,9 +15,17 @@ namespace RateCalculator.Model
         public bool IsActive { get; set; } = true;
         protected bool IsSpecial { get; set; }
 
-        public abstract decimal? GetTotal(DateTime entryTime, DateTime exitTime);
+        public decimal? GetTotalCost(DateTime entryTime, DateTime exitTime)
+        {
+            if (!ValidateEntry(entryTime, exitTime))
+                return null;
 
-        public abstract bool VerifyRateApplies(DateTime entryTime, DateTime exitTime);
+            return GetTotal(entryTime, exitTime);
+        }
+
+        protected abstract decimal? GetTotal(DateTime entryTime, DateTime exitTime);
+
+        protected abstract bool VerifyRateApplies(DateTime entryTime, DateTime exitTime);
 
         public bool ValidateEntry(DateTime entryTime, DateTime exitTime)
         {

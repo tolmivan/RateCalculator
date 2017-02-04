@@ -29,7 +29,7 @@ namespace RateCalculator.Model
             this.RateAmount = dailyRate;
             this.Notes = "Enter between 6:00 PM to 12:00 AM\nExit before 6 AM the following day";
         }
-        public override decimal? GetTotal(DateTime entryTime, DateTime exitTime)
+        protected override decimal? GetTotal(DateTime entryTime, DateTime exitTime)
         {
             if (!VerifyRateApplies(entryTime, exitTime))
                 return null;
@@ -38,7 +38,7 @@ namespace RateCalculator.Model
             return this.RateAmount;
         }
 
-        public override bool VerifyRateApplies(DateTime entryTime, DateTime exitTime)
+        protected override bool VerifyRateApplies(DateTime entryTime, DateTime exitTime)
         {
             TimeSpan actualEntry = entryTime.TimeOfDay;
             TimeSpan actualExit = exitTime.TimeOfDay;

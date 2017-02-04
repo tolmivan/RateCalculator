@@ -15,7 +15,7 @@ namespace RateCalculator.Test
             DateTime entry = Convert.ToDateTime("04/02/2017 8:00:00");
             DateTime exit = Convert.ToDateTime("04/02/2017 20:00:00");
 
-            Assert.AreEqual(10M, rate.GetTotal(entry, exit));
+            Assert.AreEqual(10M, rate.GetTotalCost(entry, exit));
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace RateCalculator.Test
             DateTime entry = Convert.ToDateTime("04/02/2017 8:00:00");
             DateTime exit = Convert.ToDateTime("05/02/2017 20:00:00");
 
-            Assert.AreEqual(10M, rate.GetTotal(entry, exit));
+            Assert.AreEqual(10M, rate.GetTotalCost(entry, exit));
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace RateCalculator.Test
             DateTime entry = Convert.ToDateTime("04/02/2017 1:00:00");
             DateTime exit = Convert.ToDateTime("05/02/2017 20:00:00");
 
-            Assert.AreEqual(10M, rate.GetTotal(entry, exit));
+            Assert.AreEqual(10M, rate.GetTotalCost(entry, exit));
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace RateCalculator.Test
             DateTime entry = Convert.ToDateTime("03/02/2017 23:00:00");
             DateTime exit = Convert.ToDateTime("06/02/2017 0:00:01");
 
-            Assert.AreEqual(null, rate.GetTotal(entry, exit));
+            Assert.AreEqual(null, rate.GetTotalCost(entry, exit));
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace RateCalculator.Test
             DateTime entry = Convert.ToDateTime("01/02/2017 8:00:00");
             DateTime exit = Convert.ToDateTime("02/02/2017 8:00:00");
 
-            Assert.AreEqual(null, rate.GetTotal(entry, exit));
+            Assert.AreEqual(null, rate.GetTotalCost(entry, exit));
         }
 
 

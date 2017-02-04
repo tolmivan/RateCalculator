@@ -29,7 +29,7 @@ namespace RateCalculator.Model
             this.RateAmount = dailyRate;
             this.Notes = "Enter anytime past midnight on Friday to Sunday\nExit any time before midnight of Sunday";
         }
-        public override decimal? GetTotal(DateTime entryTime, DateTime exitTime)
+        protected override decimal? GetTotal(DateTime entryTime, DateTime exitTime)
         {
             if (!VerifyRateApplies(entryTime, exitTime))
                 return null;
@@ -38,7 +38,7 @@ namespace RateCalculator.Model
             return this.RateAmount;
         }
 
-        public override bool VerifyRateApplies(DateTime entryTime, DateTime exitTime)
+        protected override bool VerifyRateApplies(DateTime entryTime, DateTime exitTime)
         {
             // set the timespans with days starting from monday, and sunday correction
             int entryDayOfweek = (int)entryTime.DayOfWeek;

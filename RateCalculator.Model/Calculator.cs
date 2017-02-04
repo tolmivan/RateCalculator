@@ -51,7 +51,7 @@ namespace RateCalculator.Model
 
             foreach (IRate rate in rates)
             {
-                decimal? currentCost = rate.GetTotal(entryTime, exitTime);
+                decimal? currentCost = rate.GetTotalCost(entryTime, exitTime);
                 if (currentCost.HasValue)
                 {
                     if (cost == null || currentCost.Value < cost)

@@ -15,7 +15,7 @@ namespace RateCalculator.Test
             DateTime entry = Convert.ToDateTime("01/08/2008 07:00:00");
             DateTime exit = Convert.ToDateTime("01/08/2008 16:00:00");
 
-            Assert.AreEqual(13, rate.GetTotal(entry, exit));
+            Assert.AreEqual(13, rate.GetTotalCost(entry, exit));
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace RateCalculator.Test
             DateTime entry = Convert.ToDateTime("01/08/2008 07:00:00");
             DateTime exit = Convert.ToDateTime("01/08/2008 15:00:00");
 
-            Assert.AreEqual(null, rate.GetTotal(entry, exit));
+            Assert.AreEqual(null, rate.GetTotalCost(entry, exit));
 
         }
     }

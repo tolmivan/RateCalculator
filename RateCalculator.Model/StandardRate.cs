@@ -21,7 +21,7 @@ namespace RateCalculator.Model
             this.RateType = RateTypes.HourlyRate;
             this.Notes = "0 – 1 hours $5.00\n1 – 2 hours $10.00\n2 – 3 hours $15.00\n3 + hours $20.00 flat rate per day for each day of parking.";
         }
-        public override decimal? GetTotal(DateTime entryTime, DateTime exitTime)
+        protected override decimal? GetTotal(DateTime entryTime, DateTime exitTime)
         {
             decimal rate = 0;
 
@@ -54,17 +54,10 @@ namespace RateCalculator.Model
             return rate;
         }
 
-        public override bool VerifyRateApplies(DateTime entryTime, DateTime exitTime)
+        protected override bool VerifyRateApplies(DateTime entryTime, DateTime exitTime)
         {
-            if(base.ValidateEntry(entryTime, exitTime))
-            {
-                // standard rates can be applied to any valid entry/exit
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            // standard rates can be applied to any valid entry/exit
+            return true;
         }
     }
 }
