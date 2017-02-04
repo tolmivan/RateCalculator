@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{F3FF6D38-80C6-463B-A7FD-7FA9A3FE29FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateCalculator.Model", "Model\RateCalculator.Model.csproj", "{F3FF6D38-80C6-463B-A7FD-7FA9A3FE29FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateCalculator.UI.Console", "RateCalculator.UI.Console\RateCalculator.UI.Console.csproj", "{98F5674F-E4F2-43F4-BD97-B5218E7408AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F3FF6D38-80C6-463B-A7FD-7FA9A3FE29FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3FF6D38-80C6-463B-A7FD-7FA9A3FE29FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3FF6D38-80C6-463B-A7FD-7FA9A3FE29FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98F5674F-E4F2-43F4-BD97-B5218E7408AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F5674F-E4F2-43F4-BD97-B5218E7408AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F5674F-E4F2-43F4-BD97-B5218E7408AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F5674F-E4F2-43F4-BD97-B5218E7408AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
