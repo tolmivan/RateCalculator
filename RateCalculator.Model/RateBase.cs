@@ -12,7 +12,7 @@ namespace RateCalculator.Model
         public RateTypes RateType { get; protected set; }
         public decimal RateAmount { get; protected set; }
         public string Notes { get; protected set; }
-        protected bool IsActive { get; set; } = true;
+        public bool IsActive { get; set; } = true;
         protected bool IsSpecial { get; set; }
 
         public abstract decimal? GetTotal(DateTime entryTime, DateTime exitTime);
