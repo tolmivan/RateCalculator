@@ -13,7 +13,7 @@ namespace RateCalculator.Model
         private readonly TimeSpan _startEntry = new TimeSpan(6, 0, 0);
         private readonly TimeSpan _endEntry = new TimeSpan(9, 0, 0);
         private readonly TimeSpan _startExit = new TimeSpan(15, 30, 0);
-        private readonly TimeSpan _endExit = new TimeSpan(11, 30, 0);
+        private readonly TimeSpan _endExit = new TimeSpan(23, 30, 0);
 
         private const decimal DefaultRate = 13;
 
@@ -51,7 +51,7 @@ namespace RateCalculator.Model
         public override bool VerifyRateApplies(DateTime entryTime, DateTime exitTime)
         {
             TimeSpan actualEntry = entryTime.TimeOfDay;
-            TimeSpan actualExit = entryTime.TimeOfDay;
+            TimeSpan actualExit = exitTime.TimeOfDay;
 
             if (entryTime.Date != exitTime.Date)
             {

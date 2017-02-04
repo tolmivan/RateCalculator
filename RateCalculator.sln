@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateCalculator.Model", "Rat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateCalculator.Client", "RateCalculator.Client\RateCalculator.Client.csproj", "{AC42642B-AAEB-41FD-A8D0-9EEB9C7048E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateCalculator.Test", "RateCalculator.Test\RateCalculator.Test.csproj", "{6B6C06B2-282B-4E07-87D9-B77EB678305E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AC42642B-AAEB-41FD-A8D0-9EEB9C7048E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC42642B-AAEB-41FD-A8D0-9EEB9C7048E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC42642B-AAEB-41FD-A8D0-9EEB9C7048E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B6C06B2-282B-4E07-87D9-B77EB678305E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6C06B2-282B-4E07-87D9-B77EB678305E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6C06B2-282B-4E07-87D9-B77EB678305E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6C06B2-282B-4E07-87D9-B77EB678305E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

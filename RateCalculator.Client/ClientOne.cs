@@ -19,6 +19,8 @@ namespace RateCalculator.Client
             IRate myStandardRate = new StandardRate();
             IRate mySpecialRate = new EarlyBirdRate();
 
+            _myRates = new List<IRate>();
+
             _myRates.Add(mySpecialRate);
             _myRates.Add(mySpecialRate);
 
