@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace RateCalculator.Model
 {
-    public abstract class RateBase
+    public abstract class RateBase : IRate
     {
         public string RateName { get; protected set; }
         public RateTypes RateType { get; protected set; }
         public decimal RateAmount { get; protected set; }
         public string Notes { get; protected set; }
+        protected bool IsActive { get; set; }
+        protected bool IsSpecial { get; set; }
+
         public abstract decimal? GetTotal(DateTime entryTime, DateTime exitTime);
 
         public abstract bool VerifyRateApplies(DateTime entryTime, DateTime exitTime);
@@ -24,11 +27,16 @@ namespace Model
 
             return false;
         }
+
+        bool IRate.IsActive()
+        {
+            return IsActive;
+        }
+
+        bool IRate.IsSpecial()
+        {
+            return IsSpecial;
+        }
     }
 
-    public enum RateTypes
-    {
-        FlatRate,
-        HourlyRate
-    }
 }

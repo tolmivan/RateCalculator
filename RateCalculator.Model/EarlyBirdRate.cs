@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace RateCalculator.Model
 {
     public class EarlyBirdRate : RateBase
     {
+        #region Rate Specific Consts
         // keeping rate specific constants at the top for readability
         private readonly TimeSpan _startEntry = new TimeSpan(6, 0, 0);
         private readonly TimeSpan _endEntry = new TimeSpan(9, 0, 0);
@@ -15,6 +16,8 @@ namespace Model
         private readonly TimeSpan _endExit = new TimeSpan(11, 30, 0);
 
         private const decimal DefaultRate = 13;
+
+        #endregion Rate Specific Consts
 
         public EarlyBirdRate() : this(DefaultRate) { }
         
