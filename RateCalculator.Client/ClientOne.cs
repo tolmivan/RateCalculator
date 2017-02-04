@@ -34,10 +34,12 @@ namespace RateCalculator.Client
 
         public string Calculate(DateTime entryTime, DateTime exitTime)
         {
-            decimal? cost = _myCalculator.Calculate(entryTime, exitTime);
+            string rateName;
+
+            decimal? cost = _myCalculator.Calculate(entryTime, exitTime, out rateName);
 
             if (cost.HasValue)
-                return string.Format("ClientOne cost:{0:c}", cost);
+                return string.Format("ClientOne cost:{0:c}, rate applied: {1}", cost, rateName);
             else
                 return "There was a problem calculating the cost, please call ClientOne support.";
         }

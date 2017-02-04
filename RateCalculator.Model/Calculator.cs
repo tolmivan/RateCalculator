@@ -17,10 +17,12 @@ namespace RateCalculator.Model
             _rates = rates;
         }
 
-        public decimal? Calculate(DateTime entryTime, DateTime exitTime)
+        public decimal? Calculate(DateTime entryTime, DateTime exitTime, out string appliedRateName)
         {
+            appliedRateName = string.Empty;
+
             // first calculate a cost based on discounted rates
-            decimal? specialCost = FindMinimumCost(_rates.Where(x => (x.IsActive() && x.IsSpecial())), entryTime, exitTime);
+            decimal? specialCost = FindMinimumCost(_rates.Where(x => (x.IsActive() && x.IsSpecial())), entryTime, exitTime, out appliedRateName);
 
             if (specialCost.HasValue)
             {
@@ -29,7 +31,7 @@ namespace RateCalculator.Model
             else
             {
                 // if no special rate found - return the cost based on standard rates
-                return FindMinimumCost(_rates.Where(x => (!x.IsActive() && x.IsSpecial())), entryTime, exitTime);
+                return FindMinimumCost(_rates.Where(x => (x.IsActive() && !x.IsSpecial())), entryTime, exitTime, out appliedRateName);
             }
         }
 
@@ -42,9 +44,10 @@ namespace RateCalculator.Model
         /// <param name="entryTime"></param>
         /// <param name="exitTime"></param>
         /// <returns></returns>
-        private decimal? FindMinimumCost(IEnumerable<IRate> rates, DateTime entryTime, DateTime exitTime)
+        private decimal? FindMinimumCost(IEnumerable<IRate> rates, DateTime entryTime, DateTime exitTime, out string rateName)
         {
             decimal? cost = null;
+            rateName = string.Empty;
 
             foreach (IRate rate in rates)
             {
@@ -54,6 +57,7 @@ namespace RateCalculator.Model
                     if (cost == null || currentCost.Value < cost)
                     {
                         cost = currentCost.Value;
+                        rateName = rate.GetRateName();
                     }
                 }
             }

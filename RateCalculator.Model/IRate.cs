@@ -11,5 +11,7 @@ namespace RateCalculator.Model
         bool IsActive();
         bool IsSpecial();
         decimal? GetTotal(DateTime entryTime, DateTime exitTime);
+
+        string GetRateName();
     }
 }

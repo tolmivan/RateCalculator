@@ -14,16 +14,16 @@ namespace RateCalculator.UI.Console
             DateTime entryTime;
             DateTime exitTime;
 
-            System.Console.WriteLine("Please enter entry time:");
+            System.Console.WriteLine("Please enter entry date/time e.g. 03/02/2017 23:00:00, press Enter to accept default");
             string entry = System.Console.ReadLine();
 
-            System.Console.WriteLine("Please enter exit time:");
-            string exit = System.Console.ReadLine();
+            System.Console.WriteLine("Please enter exit date/time e.g. 04/02/2017 5:00:00, press Enter to accept default");
+            string exit = System.Console.ReadLine(); 
 
             if(entry == "" || exit == "")
             {
-                entryTime = DateTime.Now;
-                exitTime = DateTime.Now.AddDays(1);
+                entryTime = Convert.ToDateTime("03/02/2017 23:00:00");
+                exitTime = Convert.ToDateTime("04/02/2017 5:00:00");
             }
             else
             {
@@ -31,6 +31,9 @@ namespace RateCalculator.UI.Console
                 exitTime = Convert.ToDateTime(exit);
 
             }
+
+            System.Console.WriteLine("Entry Time:{0}", entryTime);
+            System.Console.WriteLine("Exit Time:{0}", exitTime);
 
 
             ClientOne client1 = new ClientOne();

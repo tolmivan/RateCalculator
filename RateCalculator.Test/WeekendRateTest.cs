@@ -41,12 +41,12 @@ namespace RateCalculator.Test
         }
 
         [TestMethod]
-        public void TestInValidRangeFriToSun()
+        public void TestInValidRangeFriToMon()
         {
             WeekendRate rate = new WeekendRate();
 
             DateTime entry = Convert.ToDateTime("03/02/2017 23:00:00");
-            DateTime exit = Convert.ToDateTime("05/02/2017 20:00:00");
+            DateTime exit = Convert.ToDateTime("06/02/2017 0:00:01");
 
             Assert.AreEqual(null, rate.GetTotal(entry, exit));
         }

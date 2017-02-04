@@ -10,9 +10,9 @@ namespace RateCalculator.Model
     {
         #region Rate Specific Consts
         // keeping rate specific constants at the top for readability
-        private readonly TimeSpan _startEntry = new TimeSpan(6, 0, 0, 0);
+        private readonly TimeSpan _startEntry = new TimeSpan(5, 0, 0, 0);
         private readonly TimeSpan _endEntry = new TimeSpan(7, 24, 0, 0);
-        private readonly TimeSpan _startExit = new TimeSpan(6, 0, 0, 0);
+        private readonly TimeSpan _startExit = new TimeSpan(5, 0, 0, 0);
         private readonly TimeSpan _endExit = new TimeSpan(7, 24, 0, 0);
 
         private const decimal DefaultRate = 10M;

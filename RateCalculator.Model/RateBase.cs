@@ -37,6 +37,11 @@ namespace RateCalculator.Model
         {
             return IsSpecial;
         }
+
+        public string GetRateName()
+        {
+            return RateName;
+        }
     }
 
 }

@@ -19,8 +19,11 @@ namespace RateCalculator.Client
             IRate myStandardRate = new StandardRate();
             IRate mySpecialRate = new EarlyBirdRate();
             IRate myNightRate = new NightRate();
-            ((NightRate)(myNightRate)).IsActive = false;
             IRate myWeekendRate = new WeekendRate();
+
+            // disable night rate
+            ((NightRate)(myNightRate)).IsActive = false;
+
 
             _myRates = new List<IRate>();
 
@@ -35,10 +38,12 @@ namespace RateCalculator.Client
 
         public string Calculate(DateTime entryTime, DateTime exitTime)
         {
-            decimal? cost = _myCalculator.Calculate(entryTime, exitTime);
+            string rateName;
+
+            decimal? cost = _myCalculator.Calculate(entryTime, exitTime, out rateName);
 
             if (cost.HasValue)
-                return string.Format("ClientTwo cost:{0:c}", cost);
+                return string.Format("ClientTwo cost:{0:c}, rate applied: {1}", cost, rateName);
             else
                 return "There was a problem calculating the cost, please call ClientTwo support.";
         }
