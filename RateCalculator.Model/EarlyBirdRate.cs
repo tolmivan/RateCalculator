@@ -24,6 +24,7 @@ namespace RateCalculator.Model
         public EarlyBirdRate(decimal dailyRate)
         {
             this.RateName = "Early Bird";
+            this.IsSpecial = true;
             this.RateType = RateTypes.FlatRate;
             this.RateAmount = dailyRate;
             this.Notes = "Enter between 6:00 AM to 9:00 AM\nExit between 3:30 PM to 11:30 PM";

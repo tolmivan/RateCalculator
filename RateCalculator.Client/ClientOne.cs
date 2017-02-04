@@ -22,7 +22,7 @@ namespace RateCalculator.Client
             _myRates = new List<IRate>();
 
             _myRates.Add(mySpecialRate);
-            _myRates.Add(mySpecialRate);
+            _myRates.Add(myStandardRate);
 
             _myCalculator = new Calculator(_myRates);
         }
