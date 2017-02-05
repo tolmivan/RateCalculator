@@ -1,0 +1,23 @@
+Calculation logic for each rate is implemented inside a separate rate class inherited from an abstract base rate class (RateBase).
+RateBase class holds some common logic and properties for all rates and prescribes which methods for rate classes to implement.
+From the other side RateBase class implements an interface IRate which determines how the rate classes are exposed to outside world 
+(Clients). 
+Calculator class encapsulates logic to calculate cost of parking given entry and exit time and array of available rates provided.
+In the current implementation the logic is such that parking costs are calculated for a given interval using all rates availbale and the 
+minimal cost is returned as the final amount. This way the requirement regarding night/weekend rates when overlapped is met.
+The "minimum rate" rule should make sense also in the future should overlappings occur.
+The Calculator class is the way how clients access the functionality.
+Clients need to create a Calculator class and supply an array of rate classes they are keen to use and then call Calculate method passing
+an interval to get a parking cost calculated.
+There are two Client classes provided here as an example.
+ClientOne uses all rates available while ClientTwo has one rate disabled.
+An example interval (default range in the Console UI) demonstrates a difference in the cost calculation by ClientOne and ClientTwo.
+
+Implementing the calculator the way it is implemented now lets future extensions easier e.g. when a new rate comes along we need to 
+implement a new rate class and get a client pass it on to the calculator. No other code needs to be changed/updated. 
+Of course there is still some work may be done on the code to get it better (e.g. introducing Factories to take on the job of creating Rate
+classes, now they are created in the client which is not ideal).
+There is a basic set of unit tests provided as well to make sure the required functionality is locked should any changes/refactoring 
+occur in the future.
+
+
